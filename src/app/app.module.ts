@@ -7,18 +7,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditableHeaderComponent } from './editable-header/editable-header.component';
 import { FormsModule } from '@angular/forms';
 import { FocusIfDirective } from './focus-if.directive';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule, OrderListModule } from 'primeng/primeng';
+import { ReorderListComponent } from './reorder-modal/reorder-list/reorderlist.component';
+import { ReorderListModalComponent } from './reorder-modal/reorder-list-modal/reorder-list-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EditableHeaderComponent,
-    FocusIfDirective
+    FocusIfDirective,
+    ReorderListComponent,
+    ReorderListModalComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     TableModule,
     FormsModule,
+    ButtonModule,
+    OrderListModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,8 @@
 
 <div class="ui-fluid ui-g-12" style="padding-top: 0;" >
 
+  <button id="reorder-button" pButton type="button" icon="fa fa-sort" (click)="openReorder()" label="Re-order" style="width:110px; margin: 3px;"></button>
+
   <!--<div style="width: calc(100vw - 20px); overflow-x: scroll">-->
 
   <p-table [columns]="gridData.headers" [value]="gridData.rows"
@@ -78,4 +80,10 @@
   </p-table>
 
 </div>
+
+
+<ask-reorderlist-modal id="reorderDataRowsModal" [value]="rowsForReorder" [property]="'valueForReorder'"
+                       [header]="'Title'"
+                       [heightPercent]="80"
+                       [listHeader]="'Data'" (onSave)="saveReorder($event)"></ask-reorderlist-modal>
 

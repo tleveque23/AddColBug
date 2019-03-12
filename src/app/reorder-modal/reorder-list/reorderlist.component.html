@@ -1,0 +1,6 @@
+<p-orderList [value]="value" [responsive]="true" [header]="header" [dragdrop]="false" [style]="{'height': height}" >
+  <ng-template let-val pTemplate="body" >
+    <span [innerHtml]="getValue(val)" style="display: inline-flex; height: 1.5em;"></span>
+  </ng-template>
+</p-orderList>
+

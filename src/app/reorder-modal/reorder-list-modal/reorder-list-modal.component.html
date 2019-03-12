@@ -1,0 +1,12 @@
+<p-dialog #dialog [header]="header" modal="true" [draggable]=true [(visible)]="reorderModalDisplay" (onHide)="onHide()" (onShow)="onShowEvent()" [resizable]=false
+          [contentStyle]="{'width': getContentWidth(), 'padding-left': '0'} ">
+
+  <ask-reorderList [header]="listHeader" [value]="value" [property]="property" [dragAndDrop]="false" [widthPercent]="widthPercent" [height]="getContentHeight()"></ask-reorderList>
+
+  <p-footer>
+    <button id="reorder-cancel-button" pButton type="button" icon="fa fa-ban" (click)="close()" class="pull-left" style="width:80px;" [disabled]="isReorderInProgress" label="Cancel"
+            ></button>
+    <button id="reorder-save-button" pButton type="button" icon="fa fas fa-save" (click)="save()" style="width:80px;" [disabled]="isReorderInProgress || !value" label="Save"
+            ></button>
+  </p-footer>
+</p-dialog>

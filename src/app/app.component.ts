@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ReorderListModalComponent } from './reorder-modal/reorder-list-modal/reorder-list-modal.component';
 
 
 export interface Header {
@@ -37,11 +38,14 @@ export class AppComponent implements OnInit {
   public rowsPerPage: number = 10;
   public firstRow: number = 0;
   public displayColumnUsage: boolean;
+  public rowsForReorder: Row[];
 
   private currentEditedCol: number = -1;
   private toDeleteColNumber: number = -1;
   private currentEditedRow: number = -1;
   private currentEditedRowValue: RowValue;
+
+  @ViewChild(ReorderListModalComponent) reorderListModelComponent: ReorderListModalComponent;
 
   private baseGrid: GridData = {
     'headers': [
@@ -187,5 +191,30 @@ export class AppComponent implements OnInit {
 
   public setCurrentEditedHeader(headerIndex: number): void {
     this.currentEditedCol = headerIndex;
+  }
+
+  public openReorder() {
+    this.rowsForReorder = [];
+    for (const row of this.gridData.rows) {
+      row.valueForReorder = this.getReorderDisplayString(row.data);
+      this.rowsForReorder.push(row);
+    }
+    this.changeDetectorRef.detectChanges();
+    this.reorderListModelComponent.open();
+  }
+
+  private getReorderDisplayString(rowData: RowValue[]): string {
+    let strData = '<span class="row-line">';
+
+    for (const value of rowData) {
+      strData = strData + `<span class="row-elem">${value.value}</span>`;
+    }
+    strData = strData.substring(0, strData.length - 3);
+
+    return strData + '</span>';
+  }
+
+  public saveReorder(event: boolean) {
+
   }
 }

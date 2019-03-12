@@ -1,0 +1,39 @@
+::ng-deep p-orderlist div.ui-orderlist.ui-orderlist-responsive div.ui-orderlist-list-container{
+  width:100%;
+}
+
+::ng-deep ask-reorderlist ul {
+  height: ~'calc(100% - 35px)!important';
+}
+
+/*::ng-deep ask-reorderlist div.ui-orderlist.ui-widget.ui-orderlist-responsive {
+  height: ~'calc(80vh - 100px)';
+}*/
+
+::ng-deep ask-reorderlist div.ui-orderlist.ui-orderlist-responsive {
+  height: 100%;
+}
+
+/*::ng-deep ask-reorderlist div.ui-orderlist-list-container {
+  height: 100%;
+  overflow: auto;
+}*/
+
+
+::ng-deep .ui-orderlist.ui-widget.ui-orderlist-responsive {
+  height: 100%;
+}
+
+
+:host ::ng-deep .ui-orderlist-caption.ui-widget-header.ui-corner-top.ng-star-inserted {
+  max-height: 35px;
+}
+
+:host ::ng-deep div.ui-orderlist-controls {
+  //width: 70px;
+}
+
+
+:host ::ng-deep li.ui-orderlist-item.ng-star-inserted:nth-child(2n):not(.ui-state-highlight):not(:hover) {
+  background-color: #f9f9f9;
+}
