@@ -1,0 +1,73 @@
+span.button-group {
+  margin-right: 15px;
+}
+
+
+::ng-deep span.row-line {
+  display: contents;
+}
+
+
+::ng-deep span.row-elem {
+  width: 10em;
+  margin-right: 4px;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.file-container {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.file-name {
+  display: inline-grid;
+  margin-right: 10px;
+}
+
+.select-file {
+
+}
+
+.worksheet-selection-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.delimiter-selection-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.text-qualifier-selection-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.first-row-container {
+  margin-top: 10px;
+//margin-bottom: 20px;
+}
+
+
+input[type=file] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  display: none;
+}
+
+div.spacer {
+  margin-bottom: 20px;
+}
+
+
+:host ::ng-deep span.variable {
+  color: red;
+}
+
+
+:host ::ng-deep .export-dropdown {
+  width: calc(33em + 90px)!important;
+}

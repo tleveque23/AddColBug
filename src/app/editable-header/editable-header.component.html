@@ -1,0 +1,10 @@
+<span *ngIf="!inEdition && header" (click)="enterEdition()" class="header-name-display">{{header.name}}</span>
+
+<input *ngIf="inEdition && header" type="text" pInputText [(ngModel)]="header.name"
+       (blur)="exitEdition()"
+       (focus)="setCurrentEditedCell(index)"
+       [maxLength]="MAX_HEADER_LENGTH"
+       (ngModelChange)="onChangeValue()"
+       [askFocusIf]="isInputInFocus()"
+       style="text-align: center"
+       />
